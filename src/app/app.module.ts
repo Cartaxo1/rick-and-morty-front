@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { ButtonModule } from 'primeng/button';
+import { CharactersComponent } from './pages/characters/characters.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, CharactersComponent],
   imports: [BrowserModule, AppRoutingModule, ButtonModule],
   providers: [],
   bootstrap: [AppComponent],
