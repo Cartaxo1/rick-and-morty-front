@@ -1,1 +1,12 @@
-<p>characters works!</p>
+<div class="flex flex-wrap w-full justify-content-center gap-2">
+  <div
+    *ngFor="let character of characters.results"
+    class="border-1 border-round-3xl w-3 p-2 flex flex-column justify-content-center align-items-center"
+  >
+    <h2>{{ character.name }}</h2>
+    <img src="{{ character.image }}" alt="Imagem de {{ character.name }}" />
+    <p>{{ character.species }}</p>
+    <p>{{ character.location.name }}</p>
+    <p>{{ character.status }}</p>
+  </div>
+</div>

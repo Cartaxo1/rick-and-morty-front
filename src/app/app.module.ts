@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 
 import { ButtonModule } from 'primeng/button';
 import { CharactersComponent } from './pages/characters/characters.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, CharactersComponent],
-  imports: [BrowserModule, AppRoutingModule, ButtonModule],
+  imports: [BrowserModule, AppRoutingModule, ButtonModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
