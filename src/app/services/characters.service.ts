@@ -11,4 +11,12 @@ export class CharactersService {
   getCharacters() {
     return this.http.get(`${this.apiUrl}/character`);
   }
+
+  getCharacterByFilterByName(filter: string) {
+    return this.http.get(`${this.apiUrl}/character/?name=${filter}`);
+  }
+
+  getCharacterById(filterId: string) {
+    return this.http.get(`${this.apiUrl}/character/${filterId}`);
+  }
 }

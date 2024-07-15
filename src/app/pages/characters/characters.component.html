@@ -1,12 +1,45 @@
+<div class="card flex justify-content-center p-2 gap-1 py-4">
+  <p-inputMask [(ngModel)]="onSearch" placeholder="Pesquise por nome ou ID" />
+  <p-button
+    icon="pi pi-search"
+    label="Pesquisar"
+    (onClick)="validaSeNumeroOuString()"
+  />
+</div>
 <div class="flex flex-wrap w-full justify-content-center gap-2">
+  @if(characters.results) {
   <div
     *ngFor="let character of characters.results"
-    class="border-1 border-round-3xl w-3 p-2 flex flex-column justify-content-center align-items-center"
+    class="border-1 border-round-3xl p-2 px-8 flex flex-column justify-content-center align-items-center"
   >
-    <h2>{{ character.name }}</h2>
-    <img src="{{ character.image }}" alt="Imagem de {{ character.name }}" />
+    <h2 class="text-sm">{{ character.name }}</h2>
+    <img
+      src="{{ character.image }}"
+      alt="Imagem de {{ character.name }}"
+      class="max-w-16rem"
+    />
     <p>{{ character.species }}</p>
     <p>{{ character.location.name }}</p>
-    <p>{{ character.status }}</p>
+    <p>
+      {{
+        character.status === "Alive"
+          ? "😁"
+          : character.status === "Dead"
+          ? "💀"
+          : "👻"
+      }}
+    </p>
   </div>
+  } @else {
+  <div
+    class="border-1 border-round-3xl w-3 p-2 flex flex-column justify-content-center align-items-center"
+  >
+    <h2>{{ characters?.name }}</h2>
+    <img src="{{ characters?.image }}" alt="Imagem de {{ characters?.name }}" />
+    <p>{{ characters?.species }}</p>
+    <p>{{ characters?.location?.name }}</p>
+    <p>{{ characters?.status }}</p>
+  </div>
+
+  }
 </div>

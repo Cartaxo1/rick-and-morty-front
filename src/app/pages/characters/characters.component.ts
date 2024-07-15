@@ -8,6 +8,7 @@ import { CharactersService } from '../../services/characters.service';
 })
 export class CharactersComponent {
   characters: any = [];
+  onSearch: string = '';
   constructor(private charactersService: CharactersService) {}
 
   ngOnInit() {
@@ -19,5 +20,29 @@ export class CharactersComponent {
       this.characters = res;
       console.log(this.characters, 'characters');
     });
+  }
+
+  getResultFilter() {
+    this.charactersService
+      .getCharacterByFilterByName(this.onSearch)
+      .subscribe((res) => {
+        this.characters = res;
+        console.log(this.characters, 'characters');
+      });
+  }
+
+  getCharacterById() {
+    this.charactersService.getCharacterById(this.onSearch).subscribe((res) => {
+      this.characters = res;
+      console.log(this.characters, 'resultado do filtro por id');
+    });
+  }
+
+  validaSeNumeroOuString() {
+    if (this.onSearch.length <= 3) {
+      this.getCharacterById();
+    } else if (this.onSearch.length > 3) {
+      this.getResultFilter();
+    }
   }
 }
