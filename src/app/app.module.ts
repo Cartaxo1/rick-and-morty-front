@@ -9,6 +9,7 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { InputMaskModule } from 'primeng/inputmask';
+import { FloatLabelModule } from 'primeng/floatlabel';
 
 import { CharactersComponent } from './pages/characters/characters.component';
 
@@ -22,6 +23,7 @@ import { CharactersComponent } from './pages/characters/characters.component';
     InputTextModule,
     FormsModule,
     InputMaskModule,
+    FloatLabelModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

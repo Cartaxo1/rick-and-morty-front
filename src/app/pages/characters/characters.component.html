@@ -1,5 +1,8 @@
 <div class="card flex justify-content-center p-2 gap-1 py-4">
-  <p-inputMask [(ngModel)]="onSearch" placeholder="Pesquise por nome ou ID" />
+  <p-floatLabel>
+    <input id="search" type="text" pInputText [(ngModel)]="onSearch" />
+    <label for="search">Pesquise por Nome ou ID</label>
+  </p-floatLabel>
   <p-button
     icon="pi pi-search"
     label="Pesquisar"
