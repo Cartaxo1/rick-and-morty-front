@@ -9,10 +9,17 @@ import { CharactersService } from '../../services/characters.service';
 export class CharactersComponent {
   characters: any = [];
   onSearch: string = '';
+  characterSpecies = [
+    { name: 'Human' },
+    { name: 'Alien' },
+    { name: 'Humanoid' },
+  ];
+  selectedSpecie: string = '';
   constructor(private charactersService: CharactersService) {}
 
   ngOnInit() {
     this.getCharacters();
+    this.selectedSpecie = this.characterSpecies[0].name;
   }
 
   getCharacters() {
@@ -35,11 +42,23 @@ export class CharactersComponent {
     });
   }
 
-  validaSeNumeroOuString() {
+  getCharacterBySpecies() {
+    this.charactersService
+      .getCharacterBySpecies(this.selectedSpecie)
+      .subscribe((res) => {
+        this.characters = res;
+      });
+  }
+
+  filterValidation() {
     if (this.onSearch.length <= 3) {
       this.getCharacterById();
-    } else if (this.onSearch.length > 3) {
+    }
+    if (this.onSearch.length > 3) {
       this.getResultFilter();
+    }
+    if (this.selectedSpecie.length > 0) {
+      this.getCharacterBySpecies();
     }
   }
 }

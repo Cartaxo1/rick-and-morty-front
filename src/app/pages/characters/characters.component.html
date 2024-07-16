@@ -5,15 +5,25 @@
       type="text"
       pInputText
       [(ngModel)]="onSearch"
-      (keydown.enter)="validaSeNumeroOuString()"
+      (keydown.enter)="filterValidation()"
     />
     <label for="search">Pesquise por Nome ou ID</label>
   </p-floatLabel>
   <p-button
     icon="pi pi-search"
     label="Pesquisar"
-    (onClick)="validaSeNumeroOuString()"
+    (onClick)="filterValidation()"
   />
+  <div
+    *ngFor="let characterSpecie of characterSpecies"
+    class="flex align-items-center"
+  >
+    <p-radioButton
+      [(ngModel)]="selectedSpecie"
+      [label]="characterSpecie.name"
+      [value]="characterSpecie.name"
+    />
+  </div>
 </div>
 <div class="flex flex-wrap w-full justify-content-center gap-2">
   @if(characters.results) {

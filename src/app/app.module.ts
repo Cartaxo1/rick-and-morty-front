@@ -10,6 +10,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { InputMaskModule } from 'primeng/inputmask';
 import { FloatLabelModule } from 'primeng/floatlabel';
+import { CheckboxModule } from 'primeng/checkbox';
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 import { CharactersComponent } from './pages/characters/characters.component';
 
@@ -24,6 +26,8 @@ import { CharactersComponent } from './pages/characters/characters.component';
     FormsModule,
     InputMaskModule,
     FloatLabelModule,
+    CheckboxModule,
+    RadioButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

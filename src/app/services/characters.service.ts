@@ -19,4 +19,8 @@ export class CharactersService {
   getCharacterById(filterId: string) {
     return this.http.get(`${this.apiUrl}/character/${filterId}`);
   }
+
+  getCharacterBySpecies(filterSpecie: string) {
+    return this.http.get(`${this.apiUrl}/character/?species=${filterSpecie}`);
+  }
 }
