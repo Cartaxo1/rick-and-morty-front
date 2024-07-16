@@ -18,7 +18,6 @@ export class CharactersComponent {
   getCharacters() {
     this.charactersService.getCharacters().subscribe((res) => {
       this.characters = res;
-      console.log(this.characters, 'characters');
     });
   }
 
@@ -27,14 +26,12 @@ export class CharactersComponent {
       .getCharacterByFilterByName(this.onSearch)
       .subscribe((res) => {
         this.characters = res;
-        console.log(this.characters, 'characters');
       });
   }
 
   getCharacterById() {
     this.charactersService.getCharacterById(this.onSearch).subscribe((res) => {
       this.characters = res;
-      console.log(this.characters, 'resultado do filtro por id');
     });
   }
 
