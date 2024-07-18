@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,8 +11,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { InputMaskModule } from 'primeng/inputmask';
 import { FloatLabelModule } from 'primeng/floatlabel';
-import { CheckboxModule } from 'primeng/checkbox';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { PaginatorModule } from 'primeng/paginator';
 
 import { CharactersComponent } from './pages/characters/characters.component';
 
@@ -19,6 +20,7 @@ import { CharactersComponent } from './pages/characters/characters.component';
   declarations: [AppComponent, CharactersComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ButtonModule,
     HttpClientModule,
@@ -26,8 +28,8 @@ import { CharactersComponent } from './pages/characters/characters.component';
     FormsModule,
     InputMaskModule,
     FloatLabelModule,
-    CheckboxModule,
     RadioButtonModule,
+    PaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,6 +1,13 @@
 import { Component } from '@angular/core';
 import { CharactersService } from '../../services/characters.service';
 
+interface PageEvent {
+  first: number;
+  rows: number;
+  page: number;
+  pageCount: number;
+}
+
 @Component({
   selector: 'app-characters',
   templateUrl: './characters.component.html',
@@ -15,6 +22,8 @@ export class CharactersComponent {
     { name: 'Humanoid' },
   ];
   selectedSpecie: string = '';
+  first: number = 10;
+  rows: number = 10;
   constructor(private charactersService: CharactersService) {}
 
   ngOnInit() {
@@ -61,4 +70,5 @@ export class CharactersComponent {
       this.getCharacterBySpecies();
     }
   }
+
 }
