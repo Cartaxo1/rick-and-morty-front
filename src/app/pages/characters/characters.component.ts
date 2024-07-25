@@ -70,5 +70,4 @@ export class CharactersComponent {
       this.getCharacterBySpecies();
     }
   }
-
 }

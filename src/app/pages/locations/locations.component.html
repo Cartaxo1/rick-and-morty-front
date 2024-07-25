@@ -1,1 +1,10 @@
-<p>locations works!</p>
+<div class="flex flex-wrap w-full justify-content-center gap-2">
+  <div
+    *ngFor="let location of locations.results"
+    class="border-1 border-round-3xl p-2 px-8 flex flex-column justify-content-center align-items-center"
+  >
+    <h2 class="text-sm">{{ location.name }}</h2>
+    <p>{{location.type}}</p>
+    <p>{{location.dimension}}</p>
+  </div>
+</div>
