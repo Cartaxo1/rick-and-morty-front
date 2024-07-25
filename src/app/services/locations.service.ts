@@ -11,4 +11,8 @@ export class LocationsService {
   getLocations() {
     return this.http.get(`${this.apiUrl}/location`);
   }
+
+  getLocationsByName(filter: string) {
+    return this.http.get(`${this.apiUrl}/location/?name=${filter}`);
+  }
 }

@@ -8,6 +8,7 @@ import { LocationsService } from '../../services/locations.service';
 })
 export class LocationsComponent {
   locations: any = [];
+  onSearch: string = '';
 
   constructor(private locationsService: LocationsService) {}
   getLocations() {
@@ -18,5 +19,11 @@ export class LocationsComponent {
 
   ngOnInit() {
     this.getLocations();
+  }
+
+  getLocationsByFilterByName() {
+    this.locationsService.getLocationsByName(this.onSearch).subscribe((res) => {
+      this.locations = res;
+    });
   }
 }
