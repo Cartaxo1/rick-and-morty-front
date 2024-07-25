@@ -15,9 +15,10 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { PaginatorModule } from 'primeng/paginator';
 
 import { CharactersComponent } from './pages/characters/characters.component';
+import { LocationsComponent } from './pages/locations/locations.component';
 
 @NgModule({
-  declarations: [AppComponent, CharactersComponent],
+  declarations: [AppComponent, CharactersComponent, LocationsComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
