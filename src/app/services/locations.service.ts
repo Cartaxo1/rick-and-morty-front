@@ -13,6 +13,10 @@ export class LocationsService {
   }
 
   getLocationsByName(filter: string) {
-    return this.http.get(`${this.apiUrl}/location/?name=${filter}`);
+    return this.http.get(`${this.apiUrl}/location/?${filter}=`);
+  }
+
+  filterLocation(filter: string, filterValue: string) {
+    return this.http.get(`${this.apiUrl}/location/?${filter}=${filterValue}`);
   }
 }

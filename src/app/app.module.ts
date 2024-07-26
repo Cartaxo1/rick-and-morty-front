@@ -16,6 +16,7 @@ import { PaginatorModule } from 'primeng/paginator';
 
 import { CharactersComponent } from './pages/characters/characters.component';
 import { LocationsComponent } from './pages/locations/locations.component';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [AppComponent, CharactersComponent, LocationsComponent],
@@ -31,6 +32,7 @@ import { LocationsComponent } from './pages/locations/locations.component';
     FloatLabelModule,
     RadioButtonModule,
     PaginatorModule,
+    DropdownModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

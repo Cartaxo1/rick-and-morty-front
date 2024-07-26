@@ -1,4 +1,4 @@
-<footer>
+<header>
   <div class="card flex justify-content-center p-2 gap-1 py-4">
     <p-floatLabel>
       <input
@@ -6,18 +6,25 @@
         type="text"
         pInputText
         [(ngModel)]="onSearch"
-        (keydown.enter)="getLocationsByFilterByName()"
+        (keydown.enter)="getFilterLocation()"
       />
-      <label for="search">Pesquise por Nome</label>
+      <label for="search">Digite o nome</label>
     </p-floatLabel>
+    <div class="card flex justify-content-center">
+      <p-dropdown
+        [options]="filter"
+        [(ngModel)]= "selectedFilter"
+        optionLabel="name"
+        placeholder="Selecione o filtro"
+      />
+    </div>
     <p-button
       icon="pi pi-search"
       label="Pesquisar"
-      (onClick)="getLocationsByFilterByName()"
+      (onClick)="getFilterLocation()"
     />
   </div>
-</footer>
-
+</header>
 <main>
   <div class="flex flex-wrap w-full justify-content-center gap-2">
     <div

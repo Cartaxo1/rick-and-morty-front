@@ -23,4 +23,6 @@ export class CharactersService {
   getCharacterBySpecies(filterSpecie: string) {
     return this.http.get(`${this.apiUrl}/character/?species=${filterSpecie}`);
   }
+
+  
 }
