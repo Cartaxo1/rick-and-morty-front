@@ -13,7 +13,7 @@
     <div class="card flex justify-content-center">
       <p-dropdown
         [options]="filter"
-        [(ngModel)]= "selectedFilter"
+        [(ngModel)]="selectedFilter"
         optionLabel="name"
         placeholder="Selecione o filtro"
       />
@@ -32,8 +32,8 @@
       class="border-1 border-round-3xl p-2 px-8 flex flex-column justify-content-center align-items-center"
     >
       <h2 class="text-sm">{{ location.name }}</h2>
-      <p>{{ location.type }}</p>
       <p>{{ location.dimension }}</p>
+      <p>{{ location.type }}</p>
     </div>
   </div>
 </main>
