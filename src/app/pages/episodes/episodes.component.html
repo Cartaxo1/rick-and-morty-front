@@ -1,0 +1,11 @@
+<main>
+  <div class="flex flex-wrap w-full justify-content-center gap-2">
+    <div
+      *ngFor="let episode of episodes.results"
+      class="border-1 border-round-3xl p-2 px-8 flex flex-column justify-content-center align-items-center"
+    >
+      <h2 class="text-sm">{{ episode.name }}</h2>
+      <p>{{ episode.episode }}</p>
+    </div>
+  </div>
+</main>

@@ -17,9 +17,10 @@ import { PaginatorModule } from 'primeng/paginator';
 import { CharactersComponent } from './pages/characters/characters.component';
 import { LocationsComponent } from './pages/locations/locations.component';
 import { DropdownModule } from 'primeng/dropdown';
+import { EpisodesComponent } from './pages/episodes/episodes.component';
 
 @NgModule({
-  declarations: [AppComponent, CharactersComponent, LocationsComponent],
+  declarations: [AppComponent, CharactersComponent, LocationsComponent, EpisodesComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
