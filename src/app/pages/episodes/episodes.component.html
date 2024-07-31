@@ -1,11 +1,48 @@
+<header>
+  <div class="card flex justify-content-center p-2 gap-1 py-4">
+    <p-floatLabel>
+      <input
+        id="search"
+        type="text"
+        pInputText
+        [(ngModel)]="onSearch"
+        (keydown.enter)="searchFilter()"
+      />
+      <label for="search">Pesquise por Nome ou Número</label>
+    </p-floatLabel>
+    <div class="card flex justify-content-center">
+      <p-dropdown
+        [options]="filter"
+        [(ngModel)]="selectedFilter"
+        optionLabel="name"
+        placeholder="Selecione o filtro"
+      />
+    </div>
+    <p-button
+      icon="pi pi-search"
+      label="Pesquisar"
+      (onClick)="searchFilter()"
+    />
+  </div>
+</header>
 <main>
   <div class="flex flex-wrap w-full justify-content-center gap-2">
+    @if (episodesById !== undefined) {
     <div
-      *ngFor="let episode of episodes.results"
+      class="border-1 border-round-3xl w-3 p-2 flex flex-column justify-content-center align-items-center"
+    >
+      <h2>{{ episodesById?.name }}</h2>
+      <p>{{ episodesById?.episode }}</p>
+    </div>
+
+    } @else {
+    <div
+      *ngFor="let episode of episodes?.results"
       class="border-1 border-round-3xl p-2 px-8 flex flex-column justify-content-center align-items-center"
     >
       <h2 class="text-sm">{{ episode.name }}</h2>
       <p>{{ episode.episode }}</p>
     </div>
+    }
   </div>
 </main>
