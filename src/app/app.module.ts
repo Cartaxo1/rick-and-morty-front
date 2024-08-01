@@ -18,9 +18,10 @@ import { CharactersComponent } from './pages/characters/characters.component';
 import { LocationsComponent } from './pages/locations/locations.component';
 import { DropdownModule } from 'primeng/dropdown';
 import { EpisodesComponent } from './pages/episodes/episodes.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, CharactersComponent, LocationsComponent, EpisodesComponent],
+  declarations: [AppComponent, CharactersComponent, LocationsComponent, EpisodesComponent, HomeComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
