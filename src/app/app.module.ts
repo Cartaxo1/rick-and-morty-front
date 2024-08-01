@@ -13,15 +13,21 @@ import { InputMaskModule } from 'primeng/inputmask';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { PaginatorModule } from 'primeng/paginator';
+import { DropdownModule } from 'primeng/dropdown';
 
 import { CharactersComponent } from './pages/characters/characters.component';
 import { LocationsComponent } from './pages/locations/locations.component';
-import { DropdownModule } from 'primeng/dropdown';
 import { EpisodesComponent } from './pages/episodes/episodes.component';
 import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, CharactersComponent, LocationsComponent, EpisodesComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    CharactersComponent,
+    LocationsComponent,
+    EpisodesComponent,
+    HomeComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
