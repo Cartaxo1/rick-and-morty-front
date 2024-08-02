@@ -25,6 +25,14 @@
     />
     <label for="search">Pesquise por Nome ou ID</label>
   </p-floatLabel>
+  <div class="card flex justify-content-center">
+    <p-dropdown
+      [options]="characterSpecies"
+      [(ngModel)]="selectedSpecie"
+      optionLabel="name"
+      placeholder="Selecione o filtro"
+    />
+  </div>
   <p-button
     icon="pi pi-search"
     label="Pesquisar"
@@ -33,26 +41,20 @@
   <div
     *ngFor="let characterSpecie of characterSpecies"
     class="flex align-items-center"
-  >
-    <p-radioButton
-      [(ngModel)]="selectedSpecie"
-      [label]="characterSpecie.name"
-      [value]="characterSpecie.name"
-    />
-  </div>
+  ></div>
 </div>
-<div class="flex flex-wrap w-full justify-content-center gap-2">
+<div class="flex flex-wrap w-full justify-content-center gap-4">
   @if(characters.results) {
   <div
     *ngFor="let character of characters.results"
-    class="border-1 border-round-3xl p-2 px-8 flex flex-column justify-content-center align-items-center"
+    class="border-1 border-round-3xl p-4 flex flex-column justify-content-center align-items-center"
   >
-    <h2 class="text-sm">{{ character.name }}</h2>
     <img
       src="{{ character.image }}"
       alt="Imagem de {{ character.name }}"
       class="max-w-16rem"
     />
+    <h2 class="text-sm">{{ character.name }}</h2>
     <p>{{ character.species }}</p>
     <p>{{ character.location.name }}</p>
     <p>
@@ -69,8 +71,8 @@
   <div
     class="border-1 border-round-3xl w-3 p-2 flex flex-column justify-content-center align-items-center"
   >
-    <h2>{{ characters?.name }}</h2>
     <img src="{{ characters?.image }}" alt="Imagem de {{ characters?.name }}" />
+    <h2>{{ characters?.name }}</h2>
     <p>{{ characters?.species }}</p>
     <p>{{ characters?.location?.name }}</p>
     <p>{{ characters?.status }}</p>

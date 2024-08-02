@@ -7,8 +7,4 @@ import { Injectable } from '@angular/core';
 export class HomeService {
   apiUrl = 'https://rickandmortyapi.com/api';
   constructor(private http: HttpClient) {}
-
-  getCharacters() {
-    return this.http.get(`${this.apiUrl}/character`);
-  }
 }

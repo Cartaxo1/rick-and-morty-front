@@ -1,13 +1,38 @@
 import { Component } from '@angular/core';
 import { CharactersService } from '../../services/characters.service';
 
-interface PageEvent {
-  first: number;
-  rows: number;
-  page: number;
-  pageCount: number;
+export interface ApiResponse {
+  info?: IInfo;
+  results?: ICharacter[];
 }
 
+export interface IInfo {
+  count: number;
+  pages: number;
+  next?: string;
+  prev?: string;
+}
+
+export interface ICharacter {
+  id: number;
+  name: string;
+  status: string;
+  species: string;
+  type: string;
+  gender: string;
+  origin: {
+    name: string;
+    url: string;
+  };
+  location: {
+    name: string;
+    url: string;
+  };
+  image: string;
+  episode: string[];
+  url: string;
+  created: Date;
+}
 @Component({
   selector: 'app-characters',
   templateUrl: './characters.component.html',
@@ -17,11 +42,11 @@ export class CharactersComponent {
   characters: any = [];
   onSearch: string = '';
   characterSpecies = [
-    { name: 'Human' },
-    { name: 'Alien' },
-    { name: 'Humanoid' },
+    { name: 'Human', value: 'human' },
+    { name: 'Alien', value: 'alien' },
+    { name: 'Humanoid', value: 'humanoid' },
   ];
-  selectedSpecie: string = '';
+  selectedSpecie: any;
   first: number = 10;
   rows: number = 10;
   constructor(private charactersService: CharactersService) {}
