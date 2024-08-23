@@ -42,6 +42,7 @@ export class CharactersComponent {
   characters: any = [];
   onSearch: string = '';
   characterSpecies = [
+    { name: 'All', value: '' },
     { name: 'Human', value: 'human' },
     { name: 'Alien', value: 'alien' },
     { name: 'Humanoid', value: 'humanoid' },
@@ -87,11 +88,10 @@ export class CharactersComponent {
   filterValidation() {
     if (this.onSearch.length <= 3) {
       this.getCharacterById();
-    }
-    if (this.onSearch.length > 3) {
+    } else if (this.onSearch.length > 3) {
       this.getResultFilter();
     }
-    if (this.selectedSpecie.length > 0) {
+    if (this.selectedSpecie === 'human' || 'alien' || 'humanoid') {
       this.getCharacterBySpecies();
     }
   }

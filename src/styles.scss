@@ -1,1 +1,33 @@
 @import "primeicons/primeicons.css";
+
+* {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --primary-color: #389bb9;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+button {
+  cursor: pointer;
+  padding: 1rem;
+  width: 10rem;
+  background-color: #11b0c8;
+}
+
+button:hover {
+  background-color: #42b4ca;
+}
+
+

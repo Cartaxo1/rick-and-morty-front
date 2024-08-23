@@ -1,16 +1,37 @@
-<header>
-  <nav class="flex justify-content-end gap-1">
-    <a routerLink="/">
-      <p-button label="Home" />
-    </a>
-    <a routerLink="/characters">
-      <p-button label="Characters" />
-    </a>
-    <a routerLink="/locations">
-      <p-button label="Locations" />
-    </a>
-    <a routerLink="/episodes">
-      <p-button label="Episodes" />
-    </a>
-  </nav>
-</header>
+<div
+  class="bg-no-repeat bg-cover bg-auto h-screen w-full"
+  style="background-image: url('assets/bg.jpeg')"
+>
+  <header class="flex justify-content-between -m-2 p-2">
+    <div class="ml-4">
+      <img src="assets/logo.png" alt="" style="width: 14rem" />
+    </div>
+    <nav class="flex justify-content-end m-3 gap-3">
+      <a routerLink="/">
+        <p-button label="Home" />
+      </a>
+      <a routerLink="/characters">
+        <p-button label="Characters" />
+      </a>
+      <a routerLink="/locations">
+        <p-button label="Locations" />
+      </a>
+      <a routerLink="/episodes">
+        <p-button label="Episodes" />
+      </a>
+    </nav>
+  </header>
+  <footer
+    class="flex justify-content-center align-items-center p-2 absolute bottom-0 w-full text-center h-6rem"
+    style="background-color: #000"
+  >
+    <p class="text-white text-3xl">
+      Rick and Morty API Developed by:
+      <a
+        class="cursor-pointer text-white hover:text-cyan-400 text-3xl no-underline"
+        href="https://github.com/Cartaxo1"
+        >João Cartaxo <i class="pi pi-github"></i
+      ></a>
+    </p>
+  </footer>
+</div>
